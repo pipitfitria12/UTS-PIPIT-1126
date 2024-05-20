@@ -1,0 +1,461 @@
+{
+	"info": {
+		"_postman_id": "894484fa-9440-41dc-8a0a-9fe59c6492d2",
+		"name": "Collection API UTS Pem. Web Framework 20232",
+		"description": "Collection ini digunakan mahasiswa untuk testing API yang akan mahasiswa buat untuk pengerjaan soal UTS (**jangan di otak-atik field body nya**).\n\nKami sebagai dosen pengampu matakuliah akan menggunakan collection API ini untuk memudahkan proses penilaian, sehingga mahasiswa bisa mengetahui berapa nilai UTS yang didapat hanya dengan melakukan pemeriksaan kesesuaian antara API yang dibuat dengan request-response dari collection API ini. Untuk memudahkan penggunaaan collection API serta **SYARAT NILAI** ini ikuti aturan-aturan berikut:\n\n1. **WAJIB HOSTING**, berbayar atau tidak dipersilahkan asalkan pada saat penilaian API dapat berjalan dengan baik. Kegagalan request-response API karena permasalahan hosting diluar tanggung jawab dosen pengampu dan sudah dipastikan dapat nilai 0.\n2. **WAJIB DOMAIN**, boleh menggunakan sub-domain sehingga bisa membeli domain secara kolektif.\n3. Pada collection terdapat beberapa simbol seperti berikut, **yang mana simbol ini harus mahasiswa ganti sesuai dengan API yang mahasiswa buat**:\n    1. **{{baseUrl}}** : nama domain boleh menggunakan http atau https\n    2. **{{jwtToken}}** : token JWT untuk otentikasi dan otorisasi (segmentasi role admin dan user)\n    3. **{{id}}** : id untuk melakukan edit ataupun delete, id: 1, 2, 3, dst\n    4. \"isi kan bla bla bla\" : isi kan inputan sesuai dengan seharusnya (boleh dimodifikasi inputannya untuk cek validasi inputan)\n4. **WAJIB GUNAKAN VALIDASI INPUTAN**\n5. **WAJIB LARAVEL**\n    \n\n**Apa yang harus saya penuhi untuk dapat nilai UTS?**\n\n1. Pengumpulan dan presensi wajib di BOC (ketentuan fakultas tidak bisa kompromi)\n2. Tidak melanggar aturan-aturan diatas\n3. Pengumpulan UTS berupa **link source code project UTS di github/gitlab/bitbucket (public bukan hasil kompresi seperti zip/rar), dan alamat domain**\n4. Melebihi batas waktu pengumpulan dianggap tidak mengikuti UTS\n    \n\n> Merugilah dia yang mencontek dan/atau memberi contekan kepada orang lain. Karena sesungguhnya dia telah membodohi dirinya sendiri serta orang lain.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33443281"
+	},
+	"item": [
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "read",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwibmFtZSI6IlBJUElUIEZJVFJJQSBaQUhBUkEgVUJQS0FSQVdBTkciLCJyb2xlIjoidXNlciIsImlhdCI6MTcxNjE3ODI4MCwiZXhwIjoxNzE2MTgxODgwfQ.Co0H-3e7iRU9rL8EDoIGQyBSwgwk-J-OzBEimV_YxWw"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://utspbfpipit1126.sistemapotekmitragaluh.com/api/categories",
+							"protocol": "https",
+							"host": [
+								"utspbfpipit1126",
+								"sistemapotekmitragaluh",
+								"com"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						},
+						"description": "melihat semua kategori"
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwibmFtZSI6IlBJUElUIEZJVFJJQSBaQUhBUkEgVUJQS0FSQVdBTkciLCJyb2xlIjoidXNlciIsImlhdCI6MTcxNjE3ODI4MCwiZXhwIjoxNzE2MTgxODgwfQ.Co0H-3e7iRU9rL8EDoIGQyBSwgwk-J-OzBEimV_YxWw"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"mainan\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://utspbfpipit1126.sistemapotekmitragaluh.com/api/categories",
+							"protocol": "https",
+							"host": [
+								"utspbfpipit1126",
+								"sistemapotekmitragaluh",
+								"com"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						},
+						"description": "membuat kategori"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwibmFtZSI6IlBJUElUIEZJVFJJQSBaQUhBUkEgVUJQS0FSQVdBTkciLCJyb2xlIjoidXNlciIsImlhdCI6MTcxNjE3ODI4MCwiZXhwIjoxNzE2MTgxODgwfQ.Co0H-3e7iRU9rL8EDoIGQyBSwgwk-J-OzBEimV_YxWw"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Elektroniik\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://utspbfpipit1126.sistemapotekmitragaluh.com/api/categories/4",
+							"protocol": "https",
+							"host": [
+								"utspbfpipit1126",
+								"sistemapotekmitragaluh",
+								"com"
+							],
+							"path": [
+								"api",
+								"categories",
+								"4"
+							]
+						},
+						"description": "menyunting kategori sesuai id yang dipilih"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwibmFtZSI6IlBJUElUIEZJVFJJQSBaQUhBUkEgVUJQS0FSQVdBTkciLCJyb2xlIjoidXNlciIsImlhdCI6MTcxNjE3ODI4MCwiZXhwIjoxNzE2MTgxODgwfQ.Co0H-3e7iRU9rL8EDoIGQyBSwgwk-J-OzBEimV_YxWw"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://utspbfpipit1126.sistemapotekmitragaluh.com/api/categories/6",
+							"protocol": "https",
+							"host": [
+								"utspbfpipit1126",
+								"sistemapotekmitragaluh",
+								"com"
+							],
+							"path": [
+								"api",
+								"categories",
+								"6"
+							]
+						},
+						"description": "menghapus kategori sesuai dengan id yang dipilih"
+					},
+					"response": []
+				}
+			],
+			"description": "kelola kategori produk"
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "read",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwibmFtZSI6IlBJUElUIEZJVFJJQSBaQUhBUkEgVUJQS0FSQVdBTkciLCJyb2xlIjoidXNlciIsImlhdCI6MTcxNjE3ODI4MCwiZXhwIjoxNzE2MTgxODgwfQ.Co0H-3e7iRU9rL8EDoIGQyBSwgwk-J-OzBEimV_YxWw"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://utspbfpipit1126.sistemapotekmitragaluh.com/api/products",
+							"protocol": "https",
+							"host": [
+								"utspbfpipit1126",
+								"sistemapotekmitragaluh",
+								"com"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						},
+						"description": "melihat semua data produk"
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwibmFtZSI6IlBJUElUIEZJVFJJQSBaQUhBUkEgVUJQS0FSQVdBTkciLCJyb2xlIjoidXNlciIsImlhdCI6MTcxNjE3ODI4MCwiZXhwIjoxNzE2MTgxODgwfQ.Co0H-3e7iRU9rL8EDoIGQyBSwgwk-J-OzBEimV_YxWw"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "baju_tidur",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "untuk_tidur",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "150000",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "Fashion",
+									"type": "text"
+								},
+								{
+									"key": "expired_at",
+									"value": "2024-09-24",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"description": "upload gambar produk",
+									"type": "file",
+									"src": "postman-cloud:///1ef15f18-7177-4da0-a14d-174a621f0b3c"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://utspbfpipit1126.sistemapotekmitragaluh.com/api/products",
+							"protocol": "https",
+							"host": [
+								"utspbfpipit1126",
+								"sistemapotekmitragaluh",
+								"com"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						},
+						"description": "membuat data produk baru"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwibmFtZSI6IlBJUElUIEZJVFJJQSBaQUhBUkEgVUJQS0FSQVdBTkciLCJyb2xlIjoidXNlciIsImlhdCI6MTcxNjE3ODI4MCwiZXhwIjoxNzE2MTgxODgwfQ.Co0H-3e7iRU9rL8EDoIGQyBSwgwk-J-OzBEimV_YxWw"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"TV\",\r\n    \"description\": \"untuk_menonton\",\r\n    \"category_id\": \"Elektronik\"\r\n}"
+						},
+						"url": {
+							"raw": "https://utspbfpipit1126.sistemapotekmitragaluh.com/api/products/4",
+							"protocol": "https",
+							"host": [
+								"utspbfpipit1126",
+								"sistemapotekmitragaluh",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"4"
+							]
+						},
+						"description": "menyunting data produk sesuai dengan id yang dipilih"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwibmFtZSI6IlBJUElUIEZJVFJJQSBaQUhBUkEgVUJQS0FSQVdBTkciLCJyb2xlIjoidXNlciIsImlhdCI6MTcxNjE3ODI4MCwiZXhwIjoxNzE2MTgxODgwfQ.Co0H-3e7iRU9rL8EDoIGQyBSwgwk-J-OzBEimV_YxWw"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://utspbfpipit1126.sistemapotekmitragaluh.com/api/products/3",
+							"protocol": "https",
+							"host": [
+								"utspbfpipit1126",
+								"sistemapotekmitragaluh",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"3"
+							]
+						},
+						"description": "menghapus data produk dengan id yang dipilih"
+					},
+					"response": []
+				}
+			],
+			"description": "mengelola data produk"
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"pipitfz@mail.com\",\r\n    \"password\":\"pipit123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://utspbfpipit1126.sistemapotekmitragaluh.com/api/login",
+					"protocol": "https",
+					"host": [
+						"utspbfpipit1126",
+						"sistemapotekmitragaluh",
+						"com"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"pipit\",\r\n    \"email\":\"pipitfz@mail.com\",\r\n    \"password\": \"pipit123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://utspbfpipit1126.sistemapotekmitragaluh.com/api/register",
+					"protocol": "https",
+					"host": [
+						"utspbfpipit1126",
+						"sistemapotekmitragaluh",
+						"com"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				},
+				"description": "registrasi akun"
+			},
+			"response": []
+		},
+		{
+			"name": "register with oauth google",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "email",
+						"value": "admin@mail.com"
+					},
+					{
+						"key": "password",
+						"value": "admin"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://utspbfpipit1126.sistemapotekmitragaluh.com/api/oauth/register?email=admin@mail.com&password=admin",
+					"protocol": "https",
+					"host": [
+						"utspbfpipit1126",
+						"sistemapotekmitragaluh",
+						"com"
+					],
+					"path": [
+						"api",
+						"oauth",
+						"register"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "admin@mail.com"
+						},
+						{
+							"key": "password",
+							"value": "admin"
+						}
+					]
+				},
+				"description": "registrasi akun baru menggunakan google oauth (install laravel socialite)"
+			},
+			"response": []
+		}
+	]
+}
